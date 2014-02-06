@@ -1,0 +1,449 @@
+<!--
+    jQuery RoadFloodPH
+    Author: Sam Deering (samdeering.com)
+    Article: jquery4u.com/mobile/jquery-mobile-portfolio/
+    Demo: jquery4u.com/demos/mobileportfoliosite/
+-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>RoadFloodPH</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="RoadFloodPH, RoadFlood.ph">
+        <meta name="author" content="sam deering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <link href="css/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet">
+        <link href="css/jquery.mobile.theme-1.2.0.min.css" rel="stylesheet">
+        <link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet">
+        <link href="css/photoswipe.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/script.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/klass.min.js"></script>
+        <script src="js/connection.js"></script>
+        <script src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- homepage -->
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>RoadFloodPH</h1>
+				
+				<!-- <a href="#login" data-rel="popup" data-position-to="window" data-role="button">Login</a>
+				<div data-role="popup" id="login" data-theme="a">
+					<form style="padding:10px 20px;">
+						<h3>Please log in</h3>
+						<label for="un" class="ui-hidden-accessible">Email:</label>
+						<input type="text" name="user" id="un" placeholder="email" />
+				 
+						<label for="pw" class="ui-hidden-accessible">Password:</label>
+						<input type="password" name="pass" id="pw" placeholder="password" />
+						
+						<div id="adminLoginMsg"></div>
+						<a data-role="button" href="#homelog" data-corners="false" data-theme="b" id="submit">Submit</a>
+					</form>
+				</div> -->
+            </div>
+
+            <div data-role="content">
+
+                    <div class="pt-menu">
+                        <a data-theme="d" data-corners="false" data-role="button" href="#viewflood">
+                            <img src="images/icons/round/64x64/roadflood.png" alt="rss" style="display: block; margin: 0 auto">
+                            View Flood
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#reference">
+                            <img src="images/icons/round/64x64/reference.png" alt="rss" style="display: block; margin: 0 auto">
+                            Reference
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#social">
+                            <img src="images/icons/round/64x64/social.png" alt="mail" style="display: block; margin: 0 auto">
+                            Social
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#emergency">
+                            <img src="images/icons/round/64x64/emergency.png" alt="mail" style="display: block; margin: 0 auto">
+                            Emergency
+                        </a>
+
+                    </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+		
+		<!-- Logged In
+		<div data-role="page" id="homelog">
+            <div data-role="header">
+                <h1>RoadFloodPH</h1>
+				<input type="button" data-inline="true" value="Log Out" class="ui-btn-right">
+            </div>
+
+            <div data-role="content">
+
+                    <div class="pt-menu">
+                        <a data-theme="d" data-corners="false" data-role="button" href="#viewflood">
+                            <img src="images/icons/round/64x64/roadflood.png" alt="rss" style="display: block; margin: 0 auto">
+                            View Flood
+                        </a>
+						
+						<a data-theme="d" data-corners="false" data-role="button" href="#add_unit">
+                            <img src="images/icons/round/64x64/addunit.png" alt="mail" style="display: block; margin: 0 auto">
+                            Add Unit
+                        </a>
+						
+						<a data-theme="d" data-corners="false" data-role="button" href="#unit_mgr">
+                            <img src="images/icons/round/64x64/unitmgr.png" alt="mail" style="display: block; margin: 0 auto">
+                            Unit Mgr.
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#reference">
+                            <img src="images/icons/round/64x64/reference.png" alt="rss" style="display: block; margin: 0 auto">
+                            Reference
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#social">
+                            <img src="images/icons/round/64x64/social.png" alt="mail" style="display: block; margin: 0 auto">
+                            Social
+                        </a>
+
+                        <a data-theme="d" data-corners="false" data-role="button" href="#emergency">
+                            <img src="images/icons/round/64x64/emergency.png" alt="mail" style="display: block; margin: 0 auto">
+                            Emergency
+                        </a>
+
+                    </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div> -->
+
+        <!-- View Flood page -->
+        <div data-role="page" id="viewflood" data-title="view flood">
+            <div data-role="header">
+                <h1>View Flood</h1>
+                <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+
+                <!-- view flood image -->
+                <img src="images/icons/avatar/m_10.png" alt="mee" />
+
+            </div>
+			
+			<form>
+				<div class="ui-field-contain">
+					<label for="select-native-2">Select Location:</label>
+					<select name="select-native-2" id="select-native-2" data-mini="true">
+						<option value="1">The 1st Option</option>
+						<option value="2">The 2nd Option</option>
+						<option value="3">The 3rd Option</option>
+						<option value="4">The 4th Option</option>
+					</select>
+				</div>
+			</form>
+			
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+
+        <!-- reference page -->
+        <div data-role="page" id="reference" data-title="reference">
+            <div data-role="header">
+                <h1>Reference</h1>
+                <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+			
+				<table data-role="table" id="my-table" data-mode="reflow">
+				  <thead>
+					<tr>
+					  <th>Category</th>
+					  <th>Gross Vehicle Weight Rating</th>
+					  <th>Vehicles</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>Light</td>
+					  <td>0-62 kN (0-14,000 lbs.)</a></td>
+					  <td>bicycle, motorcycle, car, wagon, pickup trucks, ambulances, parcel delivery</td>
+					</tr>
+				  </tbody>
+				  <tbody>
+					<tr>
+					  <td>Medium</td>
+					  <td>62-147 kN (14,001-33,000 lbs.)</a></td>
+					  <td>city cargo van, delivery truck, wrecker, school bus</td>
+					</tr>
+				  </tbody>
+				  <tbody>
+					<tr>
+					  <td>Heavy</td>
+					  <td>147 kN and over (33,000 lbs. and over)</a></td>
+					  <td>truck tractor, concrete mixer, dump truck, fire truck, city bus</td>
+					</tr>
+				  </tbody>
+				</table>
+				
+				<div data-role="collapsible" data-collapsed="true">
+					<h3>View Image</h3>
+					<p><img src="images/snip.png" alt="Vehicle Classification" width="100%"/></p>
+				</div>
+				
+				<div data-role="collapsible" data-collapsed="true" class="source">
+					<h3>Source</h3>
+					<a href="http://www.google.com/patents/WO2007073375A1?cl=en"><i>Vehicle Classification 1</br></i></a>
+					<a href="http://www.docstoc.com/docs/37102525/Austroads-Vehicle-Classification-System"><i>Vehicle Classification 2</i></a>
+				</div>
+
+                <div>
+                    <!-- next page link -->
+                    <a class="next-btn" data-theme="c" data-corners="false" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" href="#reference2">
+                        Next
+                    </a>
+                </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>RoadFloodPH</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+		
+		<!-- reference2 page -->
+		
+		<div data-role="page" id="reference2" data-title="reference2">
+            <div data-role="header">
+                <h1>Reference</h1>
+                <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+
+				<p><img src="images/flood-gauge.jpg" id="flood_gauge" alt="MMDA Flood Gauge" width="100%" /></p>
+				<div class="source">
+					Source: <a href="Source: http://jdbelmonte.wordpress.com/2013/08/20/mmda-flood-gauge"><i>jdbelmonte@wordpress</br></i></a>
+				</div>
+
+                <div>
+                    <!-- previous page link -->
+                    <a class="previous-btn" data-theme="c" data-corners="false" data-role="button" data-inline="true" data-icon="arrow-l" href="#reference">
+                        Back
+                    </a>
+
+                    <!-- next page link -->
+                    <a class="next-btn" data-theme="c" data-corners="false" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" href="#reference3">
+                        Next
+                    </a>
+                </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>RoadFloodPH</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+		
+		<!-- reference3 page -->
+		
+		<div data-role="page" id="reference3" data-title="reference3">
+            <div data-role="header">
+                <h1>Reference</h1>
+                <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+			
+				<p><img src="images/mmda.jpg" id="mmda" alt="MMDA Flood Level Indicator" width="100%" /></p>
+
+                <div>
+                    <!-- previous page link -->
+                    <a class="previous-btn" data-theme="c" data-corners="false" data-role="button" data-inline="true" data-icon="arrow-l" href="#reference2">
+                        Back
+                    </a>
+                </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>RoadFloodPH</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+
+
+        <!-- social page -->
+        <div data-role="page" id="social" data-title="Social">
+            <div data-role="header">
+                <h1>Social</h1>
+                <a data-role="button" href="#home" data-transition="flip"
+                data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+
+                <div id="social-links" class="pt-menu">
+
+                    <a data-theme="d" data-corners="false" data-role="button" href="#twitter">
+                        <img src="images/icons/round/64x64/twitter.png" alt="twitter" style="display: block; margin: 0 auto">
+                        Twitter
+                    </a>
+
+                    <a data-theme="d" data-corners="false" data-role="button" href="#facebook">
+                        <img src="images/icons/round/64x64/facebook.png" alt="facebook" style="display: block; margin: 0 auto">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+
+        <!-- Add Unit page
+        <div data-role="page" id="add_unit" data-title="Add Unit">
+            <div data-role="header">
+                <h1>Add Unit</h1>
+                <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+                <form method="POST" action="php/contact.php" id="contact" novalidate="novalidate">
+                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="unit_code" class="ui-input-text">
+                            Unit Code:
+                        </label>
+                        <input type="text" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="unit_code" id="unit_code" data-corners="false">
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="sim" class="ui-input-text">
+                            Unit SIM Number:
+                        </label>
+                        <input type="text" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="sim" id="sim" data-corners="false" placeholder="+639123456789">
+                    </div>
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="select-choice-1" class="select">Unit Data Viewing</label>
+						<select name="select-choice-1" id="select-choice-1">
+						  <option value="public">Public</option>
+						  <option value="private">Private</option>
+						</select>
+                    </div>
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="select-choice-1" class="select">Unit Region</label>
+						<select name="select-choice-1" id="select-choice-1">
+						  <option value="NCR">NCR</option>
+						  <option value="CAR">CAR</option>
+						  <option value="ARMM">ARMM</option>
+						  <option value="r1">1</option>
+						  <option value="r2">2</option>
+						  <option value="r3">3</option>
+						  <option value="r4">4</option>
+						  <option value="r5">5</option>
+						  <option value="r6">6</option>
+						  <option value="r7">7</option>
+						  <option value="r8">8</option>
+						  <option value="r9">9</option>
+						  <option value="r10">10</option>
+						  <option value="r11">11</option>
+						  <option value="r12">12</option>
+						  <option value="r13">13</option>
+						</select>
+                    </div>
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="unit_name" class="ui-input-text">
+                            Unit Name:
+                        </label>
+                        <input type="text" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="unit_name" id="unit_name" data-corners="false" placeholder="Pureza, Sta. Mesa, Manila">
+                    </div>
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="unit_name" class="ui-input-text">
+                            Unit SMS Identification Code:
+                        </label>
+                        <input type="text" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="unit_id" id="unit_id" data-corners="false" placeholder="max 10 alphanumeric characters">
+                    </div>
+                    
+                    <button type="submit" data-theme="d" name="submit" value="submit" class="ui-btn-hidden" aria-disabled="false" data-corners="false">Submit</button>
+                </form>
+
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div> -->
+		
+		<!-- Unit Manager
+        <div data-role="page" id="unit_mgr" data-title="Unit Manager">
+            <div data-role="header">
+                <h1>Unit Manager</h1>
+                <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+                <form method="POST" action="php/contact.php" id="contact" novalidate="novalidate">
+                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="name" class="ui-input-text">
+                            Name*:
+                        </label>
+                        <input type="text" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="name" id="name" data-corners="false">
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="email" class="ui-input-text">
+                            Email*:
+                        </label>
+                        <input type="email" class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        value="" name="email" id="email" data-corners="false">
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                        <label for="msg" class="ui-input-text">
+                            Message*:
+                        </label>
+                        <textarea class="required ui-input-text ui-body-d ui-corner-none ui-shadow-inset"
+                        rows="8" cols="160" name="msg" id="msg" data-corners="false"></textarea>
+                    </div>
+                    <button type="submit" data-theme="d" name="submit" value="submit" class="ui-btn-hidden" aria-disabled="false" data-corners="false">Send Message</button>
+                </form>
+
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div> -->
+		
+		<!-- Emergency Hotlines -->
+        <div data-role="page" id="emergency" data-title="Emergency Hotlines">
+            <div data-role="header">
+                <h1>Emergency Hotlines</h1>
+                <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+                <p><img src="images/emergency-hotlines.jpg" id="emergency_hotlines" alt="Emergency Hotlines" width="100%" /></p>
+            </div>
+            <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+    
+	</body>
+
+</html>
