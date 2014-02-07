@@ -24,6 +24,7 @@
         <script src="js/settings.js"></script>
         <script src="js/klass.min.js"></script>
         <script src="js/connection.js"></script>
+        <script src="js/scriptAnimations.js"></script>
         <script src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
     </head>
 
@@ -53,8 +54,8 @@
             <div data-role="content">
 
                     <div class="pt-menu">
-                        <a data-theme="d" data-corners="false" data-role="button" href="#viewflood">
-                            <img src="images/icons/round/64x64/roadflood.png" alt="rss" style="display: block; margin: 0 auto">
+                        <a data-theme="d" data-corners="false" data-role="button" id="viewfld2" href="#viewflood">
+                            <img src="images/icons/round/64x64/roadflood.png" id="viewfld" alt="rss" style="display: block; margin: 0 auto">
                             View Flood
                         </a>
 
@@ -72,11 +73,13 @@
                             <img src="images/icons/round/64x64/emergency.png" alt="mail" style="display: block; margin: 0 auto">
                             Emergency
                         </a>
+						
+						<a href="#about" class="aboutme">About</a>
 
                     </div>
 
             </div>
-            <div data-role="footer">
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>BS CoE V-1</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -133,30 +136,46 @@
 
         <!-- View Flood page -->
         <div data-role="page" id="viewflood" data-title="view flood">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>View Flood</h1>
                 <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
             </div>
             <div data-role="content">
 
                 <!-- view flood image -->
-                <img src="images/icons/avatar/m_10.png" alt="mee" />
-
-            </div>
-			
-			<form>
+				<div data-role="collapsible" data-collapsed="true" class="source">
+					<h3>Vehicles</h3>
+					<img src="images/Motorbike.png" alt="Vehicles" id="vehicleflood" width="100%"/>
+					Flood Height: <p class="floodheight"></p>
+				</div>
+				
+				<div data-role="collapsible" data-collapsed="true" class="source">
+					<h3>Body Measurement</h3>
+					<img src="images/happy.gif" alt="Body Measurement" id="bodyflood" width="100%"/>
+					Flood Height: <p class="floodheight"></p>
+				</div>
+				
+				<div data-role="collapsible" data-collapsed="true" class="source">
+					<h3>MMDA Flood Gauge</h3>
+					<img src="images/MMDAFloodGauge.png" alt="MMDA Flood Gauge" id="mmdaflood" width="100%"/>
+					Flood Height: <p class="floodheight"></p>
+				</div>
+				
+				<form>
 				<div class="ui-field-contain">
 					<label for="select-native-2">Select Location:</label>
-					<select name="select-native-2" id="select-native-2" data-mini="true">
-						<option value="1">The 1st Option</option>
-						<option value="2">The 2nd Option</option>
-						<option value="3">The 3rd Option</option>
-						<option value="4">The 4th Option</option>
+					<select name="select-native-2" id="select-location" data-mini="true">
+						<option value="Pureza, Sta. Mesa, Manila">Pureza, Sta. Mesa, Manila</option>
+						<option value="Don Antonio, Holy Spirit, QC">Don Antonio, Holy Spirit, QC</option>
 					</select>
 				</div>
 			</form>
 			
-            <div data-role="footer">
+			<a href="#about" class="aboutme">About</a>
+
+            </div>
+			
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>BS CoE V-1</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -164,7 +183,7 @@
 
         <!-- reference page -->
         <div data-role="page" id="reference" data-title="reference">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>Reference</h1>
                 <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
             </div>
@@ -203,7 +222,7 @@
 				
 				<div data-role="collapsible" data-collapsed="true">
 					<h3>View Image</h3>
-					<p><img src="images/snip2.png" alt="Vehicle Classification" width="100%"/></p>
+					<p><img src="images/snip.png" alt="Vehicle Classification" id="vclass" width="100%"/></p>
 				</div>
 				
 				<div data-role="collapsible" data-collapsed="true" class="source">
@@ -218,9 +237,12 @@
                         Next
                     </a>
                 </div>
+				
+				<a href="#about" class="aboutme">About</a>
 
             </div>
-            <div data-role="footer">
+			
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>RoadFloodPH</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -229,7 +251,7 @@
 		<!-- reference2 page -->
 		
 		<div data-role="page" id="reference2" data-title="reference2">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>Reference</h1>
                 <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
             </div>
@@ -251,9 +273,11 @@
                         Next
                     </a>
                 </div>
+				
+				<a href="#about" class="aboutme">About</a>
 
             </div>
-            <div data-role="footer">
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>RoadFloodPH</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -262,7 +286,7 @@
 		<!-- reference3 page -->
 		
 		<div data-role="page" id="reference3" data-title="reference3">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>Reference</h1>
                 <a data-role="button" href="#home" data-transition="flip" data-icon="home" data-corners="false">Home</a>
             </div>
@@ -276,9 +300,11 @@
                         Back
                     </a>
                 </div>
+				
+				<a href="#about" class="aboutme">About</a>
 
             </div>
-            <div data-role="footer">
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>RoadFloodPH</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -287,7 +313,7 @@
 
         <!-- social page -->
         <div data-role="page" id="social" data-title="Social">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>Social</h1>
                 <a data-role="button" href="#home" data-transition="flip"
                 data-icon="home" data-corners="false">Home</a>
@@ -307,9 +333,11 @@
                     </a>
 
                 </div>
+				
+				<a href="#about" class="aboutme">About</a>
 
             </div>
-            <div data-role="footer">
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>BS CoE V-1</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>
@@ -431,14 +459,36 @@
 		
 		<!-- Emergency Hotlines -->
         <div data-role="page" id="emergency" data-title="Emergency Hotlines">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 <h1>Emergency Hotlines</h1>
                 <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
             </div>
             <div data-role="content">
                 <p><img src="images/emergency-hotlines.jpg" id="emergency_hotlines" alt="Emergency Hotlines" width="100%" /></p>
-            </div>
+            
+				<a href="#about" class="aboutme">About</a>
+			
+			</div>
             <div data-role="footer">
+                <h2>BS CoE V-1</h2>
+                <p class="copyright">&copy; Copyright 2014</p>
+            </div>
+        </div>
+		
+		<div data-role="page" id="about" data-title="Emergency Hotlines">
+            <div data-role="header">
+                <h1>About the Project</h1>
+                <a data-role="button" href="#home" data-icon="home" data-corners="false">Home</a>
+            </div>
+            <div data-role="content">
+                <p><img src="images/roadfloodph.png" id="rfph" alt="RoadFloodPH" width="100%" /></p>
+				<p class="description"><b>RoadFloodPH</b> is a reasearch project that aims to create mobile and web application that enables users to locate and monitor flooded areas during rainy seasons through flood sensors. The sensor could be
+installed in different roads, institutions, and even houses to monitor flood height in certain locations. The web and mobile apps will then present real-time flood readings in such a way that every Filipinos could easily understand. Flood announcements or advisories are pushed through SMS advisory and social 
+networking sites such as Twitter and Facebook.</p>
+				<p class="description">Developed by: Johnver Bautista, Kim Carla Lleno, Katrina Malagday, Mark Anthony Muya</p>
+				
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
                 <h2>BS CoE V-1</h2>
                 <p class="copyright">&copy; Copyright 2014</p>
             </div>

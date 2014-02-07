@@ -1,27 +1,25 @@
 $(document).ready(function(){
-	$("#submit").click(function(){
-			var adminUsername = $("#un").val();
-			var adminPassword = $("#pw").val();
-			$("#adminLoginMsg").hide();
-
-
-			if(adminUsername != "" && adminPassword != ""){
-				$.post("http://roadfloodph.cloudapp.net/roadfloodph/admin.php", {username: adminUsername, password: adminPassword}, function(json){
-					if(json.query){
-						$("#un").text(json.username);
-						console.log(json.username);
-						$("#pw").append('<b class="caret">');
-					}
-					else{
-						$("#adminLoginMsg").text("Your username and password is not found in the list of Admins.");
-						$("#adminLoginMsg").show();
-						$("#un").focus("");
-					}
+	$("#viewfld2").click(function(){
+				$.post("http://roadfloodph.cloudapp.net/roadfloodph/selectAllData.php", {emailAddress: "public"}, function(json){
+				console.log(json);
+				
+				$(".floodheight").html(json.roadFloodLevel1);
+					
 				});
-			}
-			else{
-				$("#adminLoginMsg").show();
-				$("#adminLoginMsg").text("Please do not leave any fields blank.");
-			}
-		});
 	});
+	$("#select-location").change(function(){
+				var select = $(this).val();
+				$.post("http://roadfloodph.cloudapp.net/roadfloodph/selectAllData.php", {emailAddress: "public"}, function(json){
+				console.log(json);
+				if(select == "Pureza, Sta. Mesa, Manila"){
+					$(".floodheight").html(json.roadFloodLevel1);
+				}else{
+					$(".floodheight").html(json.roadFloodLevel2);
+				}
+				
+	});
+	});
+	
+	
+
+});

@@ -20,6 +20,17 @@ $(document).ready(function(){
      {$(this).animate({width: "293px"}, 'slow');
    });
    
+   $('#vclass').width(293);
+   $('#vclass').mouseover(function()
+   {
+      $(this).css("cursor","pointer");
+   });
+   $("#vclass").toggle(function()
+     {$(this).animate({width: "500px"}, 'slow');},
+     function()
+     {$(this).animate({width: "293px"}, 'slow');
+   });
+   
    $('#mmda').width(293);
    $('#mmda').mouseover(function()
    {
